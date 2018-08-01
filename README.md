@@ -2,7 +2,8 @@
 
 Alexey Ershov, "Automated Analysis of Time-resolved X-ray Data using Optical Flow Methods"
 
-[Full text (pdf)](../blob/master/PhD_Thesis_Ershov.pdf)
+[Full text (pdf)](../master/PhD_Thesis_Ershov.pdf)
+
 [Full text on Karlsruhe Institute of Technology Library](https://publikationen.bibliothek.kit.edu/1000055519)
 
 
