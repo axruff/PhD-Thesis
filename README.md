@@ -1,3 +1,29 @@
 # PhD-Thesis
 
 Alexey Ershov, "Automated Analysis of Time-resolved X-ray Data using Optical Flow Methods"
+
+
+## Abstract
+
+
+*X-ray imaging* is a genuine tool to reveal internal structures of opaque objects. This is possible due to the penetration properties of its probe - X-ray radiation.
+Modern synchrotron facilities, equipped with high-resolution detector systems, provide  X-ray radiation of unique quality and allow to investigate a broad range of *dynamical* processes, both in materials and biological specimens.
+To perform *automated* and *quantitative* analysis of *time-resolved* X-ray data, a method capable to retrieve dynamical information is required. In this work we develop a general-purpose framework for X-ray data analysis based on *optical flow*.
+
+
+*Optical flow* methods traditionally belong to the field of Computer Vision. Finding correspondences between time-lapse images is a key problem in a variety of applications such as robot vision, tracking systems and video analysis.
+In the scope of this work we adapt  *variational* optical flow methods - a specific class of approaches used to determine the optical flow - to the task of X-ray data analysis.
+
+
+The quality of time-resolved X-ray data is diverse, ranging from high-resolution datasets to low-contrast, noisy images with artifacts. We provide a detailed classification of X-ray data. This taxonomy serves as a reference point for the development of image preprocessing, motion estimation and data analysis techniques. Image preprocessing is employed to enhance the original (raw) X-ray data in order to improve the accuracy of optical flow estimation for the case of challenging data.
+ 
+
+To develop an accurate and *robust* motion estimation model, we perform a systematic evaluation of state-of-the-art optical flow techniques and make quantitative performance analysis of their components. 
+
+
+On the top of the optical flow estimation we provide an extensive *data analysis toolkit* including automated tracking, flow analysis, motion-based segmentation, image registration and detection of temporal changes. All the devised techniques can be applied in 4D (3D + time) to enable analysis of tomographic data.
+The implementation of the developed techniques incorporates advanced numerical schemes and computations on GPU. Thereby, the processing of a vast amount of X-ray data is feasible. 
+
+
+Finally, we present the application of the optical flow methods to a number of scientific problems from various research fields. These examples include flow analysis and particle segmentation in semi-solid alloys, analysis of morphogenesis in living frog embryos, coalescence events estimation and stability studies during the foaming process, and tracking of morphological dynamics in living insects.
+
