@@ -2,6 +2,8 @@
 
 Alexey Ershov, "Automated Analysis of Time-resolved X-ray Data using Optical Flow Methods"
 
+[Full text](../PhD_Thesis_Ershov.pdf)
+
 
 ## Abstract
 
@@ -27,3 +29,38 @@ The implementation of the developed techniques incorporates advanced numerical s
 
 Finally, we present the application of the optical flow methods to a number of scientific problems from various research fields. These examples include flow analysis and particle segmentation in semi-solid alloys, analysis of morphogenesis in living frog embryos, coalescence events estimation and stability studies during the foaming process, and tracking of morphological dynamics in living insects.
 
+## Table of Content
+
+
+1. Introduction
+   - 1.1. Motivation
+   - 1.2 Outline 
+   - 1.3 X-ray Imaging 
+   - 1.4 Variational Optical Flow
+   - 1.5 Aims of the Work
+2. Optical Flow Methods
+   - 2.1 Modeling
+   - 2.2 Numerical Solution
+3. Data Analysis Framework
+   - 3.1 Data Preprocessing 
+   - 3.2 Analysis Based on Optical Flow
+4. Computational Framework 
+   - 4.1 Software Framework 
+   - 4.2 High Performance Computing
+   - 4.3 Visualization
+5. Evaluation on Synthetic Data
+   - 5.1 Data Taxonomy 
+   - 5.2 Experimental Data
+   - 5.3 Optimization of Parameters
+   - 5.4 Quantitative Evaluation
+   - 5.5 Models Comparison
+   - 5.6 Evaluation Summary
+6. Applications in X-ray Imaging
+   - 6.1 Motion Analysis
+   - 6.2 Temporal Changes Detection
+   - 6.3 Tracking
+7. Summary and Outlook
+   - 7.1 Conclusions
+   - 7.2 Further work
+8. List of Publications
+  
