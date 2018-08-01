@@ -1,0 +1,270 @@
+
+\documentclass[a4paper,12pt, twoside]{book}
+
+\usepackage{latexsym,amssymb}
+\usepackage{epsfig,bm}
+\usepackage{settings,algorithm,algorithmic}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[usenames,dvipsnames]{color}
+%\usepackage[backgroundcolor=green!10,linecolor=green!70, textsize=footnotesize]{todonotes}
+\usepackage{hyperref}
+
+
+\usepackage{multirow}
+\usepackage{rotating}
+
+% Table packages
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{dcolumn}
+\usepackage[table]{xcolor}
+
+\usepackage{setspace}
+
+
+
+%\usepackage{showframe}
+%\usepackage{fullpage}
+
+
+% !!!!!!!!!!!!!!!!!! ---- proof reading
+%\usepackage[top=2.0in, bottom=0.5in, inner=2cm,outer=5cm]{geometry}
+%\linespread{1.2}
+
+
+% !!!!!!!!!!!!!!!!!! ---- Original
+\usepackage[top=1.2in, bottom=1.1in, inner=2.5cm,outer=2.5cm]{geometry}
+
+
+
+%\setlength{\oddsidemargin}{5.5pt}
+%\setlength{\evensidemargin}{5.5pt}
+
+%\usepackage{lineno}
+%\linenumbers
+
+
+%\usepackage{subfigure}
+
+
+% Short [BWB05]
+\bibliographystyle{alpha}
+
+% Names [Bruhn et al]
+%\bibliographystyle{apalike}
+
+% Count [1]
+%\bibliographystyle{ieeetr}
+
+
+%\headsep 6.3mm
+
+\newcommand{\myImageSize}{0.4}
+\newcommand{\opticalflow}{optical flow }
+\newcommand{\Opticalflow}{Optical flow }
+
+\newcommand{\rub}{\textit{RubberWhale} }
+\newcommand{\hyd}{\textit{Hydrangea} }
+\newcommand{\mar}{\textit{New Marble} }
+
+\setcounter{secnumdepth}{3}
+
+
+%\definecolor{good}{RGB}{152,251,152}
+%\definecolor{norm}{RGB}{255,250,205}
+%\definecolor{bad}{RGB}{240,128,128}
+
+\definecolor{good}{RGB}{174,210,147}
+\definecolor{norm}{RGB}{255,250,205}
+\definecolor{bad}{RGB}{222,135,136}
+
+\definecolor{darkgreen}{RGB}{138,43,226}
+
+
+%\linespread{1.3}
+
+%\newcommand{\myFigureSize}{0.65}
+
+%\setlength{\marginparwidth}{2.6cm}
+%\reversemarginpar
+
+%---------------------------------------
+% Additional mark up
+%---------------------------------------
+\newif\ifmarkup
+
+%\markuptrue  % use document mark up: comments, todo, show text quality
+\markupfalse % do not show additional mark up
+
+\ifmarkup
+		%\newcommand{\todo}[1]{(\colorbox{Goldenrod}{\textbf{ToDo}} \textcolor{Gray}{#1})}
+		\newcommand{\comment}[1]{[\textcolor{red}{\sffamily #1}]}
+		\newcommand{\change}[1]{\textcolor{blue}{[#1]}}
+		%\newcommand{\change}[1]{\colorbox{yellow}{[#1]}}
+		\newcommand{\todo}[1]{\colorbox{green}{TODO} [\textcolor{darkgreen}{#1]}}
+\else
+		%\newcommand{\todo}[1]{}
+		\newcommand{\comment}[1]{}
+		\newcommand{\change}[1]{#1}
+		\newcommand{\todo}[1]{}
+\fi
+
+
+\newcommand{\includegraphicslabeledw}[3][,]{%
+	\setbox1=\hbox{\includegraphics[#1]{#2}}% Store image in box
+	\leavevmode\rlap{\usebox1}% Print image
+	\rlap{\hspace*{5pt}\raisebox{\dimexpr\ht1-1\baselineskip}{\textcolor{white}{\sffamily \large \textbf{#3}}}}% Print label
+	\phantom{\usebox1}% Insert appropriate spcing
+}
+
+\newcommand{\includegraphicslabeledb}[3][,]{%
+	\setbox1=\hbox{\includegraphics[#1]{#2}}% Store image in box
+	\leavevmode\rlap{\usebox1}% Print image
+	\rlap{\hspace*{5pt}\raisebox{\dimexpr\ht1-1\baselineskip}{\textcolor{black}{\sffamily \large \textbf{#3}}}}% Print label
+	\phantom{\usebox1}% Insert appropriate spcing
+}
+
+
+
+
+\begin{document}
+
+
+\include{title}
+
+
+
+
+
+\include{ch00_abstract}
+
+\include{ch00_abstract_de}
+
+%\include{ch00_dedicated}
+
+\include{ch00_acknowledge}
+
+\tableofcontents
+
+
+\include{ch01_intro}
+
+\include{ch02_optical_flow}
+
+\include{ch03_data_analysis}
+
+\include{ch04_software}
+
+\include{ch05_experiments}
+
+\include{ch06_applications}
+
+\include{ch07_summary}
+
+
+%******************************************************************
+%******************************************************************
+\appendix
+%******************************************************************
+%******************************************************************
+
+%******************************************************************
+%******************************************************************
+\chapter {List of Publications}
+%******************************************************************
+%******************************************************************
+\begin{enumerate}
+
+\item K. Heim, A. Ershov, F. Garc\'ia-Moreno, A. Rack, J. Banhart.
+Investigation of particle movements and drainage in liquid metallic films by synchrotron radioscopy. 
+\\
+\textit{International Conference on Porous Metals and Metallic foams Technology, "MetFoam 2015"} submitted (2015)
+
+\item T. dos Santos Rolo, A. Ershov, T. van de Kamp, and T. Baumbach.
+In vivo X-ray cine-tomography for tracking morphological dynamics. 
+\textit{Proceedings of the National Academy of Sciences} 111(11):3921-3926 (2014)
+
+\item J. Moosmann, A. Ershov, V. Weinhardt, T. Baumbach, M. Prasad, C. LaBonne, X. Xiao, J. Kashef, R. Hofmann. Time-lapse X-ray phase-contrast microtomography for in vivo imaging and analysis of morphogenesis.
+\textit{Nature Protocols} 9 (2) , 294--304 (2014). 
+
+\item J. Moosmann, A. Ershov, V. Altapova, T. Baumbach, M. Prasad, C. LaBonne, X. Xiao, J. Kashef, R. Hofmann. X-ray phase-contrast in vivo microtomography probes new aspects of Xenopus gastrulation.
+\textit{Nature} 497 (7449) , 374--377(2013). 
+
+\item T. van de Kamp, A. Ershov, T. dos Santos Rolo, A. Riedel, T. Baumbach. Insect imaging at the ANKA Synchrotron Radiation Facility.
+\textit{Entomologie heute} 25, 147--160(2013). 
+
+\item S. Zabler, A. Ershov, A. Rack, F. Garc\'ia-Moreno, T. Baumbach, J. Banhart.
+Particle and liquid motion in semi-solid aluminium alloys: a quantitative in situ micro-radioscopy study.
+\textit{Acta Materialia}, vol. 61, issue 4, 1244–1253 (2013)
+
+\item A. Myagotin, A. Ershov, L. Helfen, R. Verdejo, A. Belyaev and T. Baumbach.
+Coalescence analysis for evolving foams via optical flow computation on projection image sequences.
+\textit{Journal of Synchrotron Radiation}, 19, 483-491 (2012)
+
+\item V. R. Altapova, A. Ershov, T. d. S. Rolo, E. Reznikova, J. Mohr, Yu. L. Pivovarov, V. F. Pichugin, G. T. Baumbach. Imaging Methods and Their Application at ANKA Light Source.
+\textit{Journal of Surface Investigation: X-ray, Synchrotron and Neutron Techniques}. Volume 6, Number 3 394-397 (2012)
+
+\item A. Rack, F. Garc\'ia-Moreno, C. Schmitt, O. Betz, A. Cecilia, A. Ershov, T. Rack, J. Banhart, S. Zabler.
+On the possibilities of hard X-ray imaging with high spatio-temporal resolution using polychromatic synchrotron radiation. \textit{Journal of X-Ray Science and Technology}, vol. 18, issue 4, 429-441 (2010)
+
+\item S. Zabler, A. Rack, F. Garc\'ia-Moreno, A. Ershov, T. Baumbach, J. Banhart.
+Th. Kannengiesser, S.S. Babu, Y.-I. Komizo, A.J. Ramirez (Eds.).
+Imaging fast processes in liquid metal foams and semi-solid alloys using synchrotron radioscopy with spatio-temporal micro-resolution in: \textit{In-situ Studies with Photons, Neutrons and Electrons Scattering}, Springer, ISBN 978-3-642-14793-7, p. 149-158 (2010)
+
+\item T. Baumbach, T. dos Santos Rolo, A. Ershov, L. Helfen, D. L\"ubbert, P. Modregger, D. Pelliccia, P. Vagovic, F. Xu.
+Moderne 2-D und 3-D abbildende Röntgenverfahren mit Synchrotronstrahlung.
+\textit{MP Materials Testing} 51 10 (2009)
+
+\item O. Betz, A. Rack, C. Schmitt, A. Ershov, A. Dieterich, L. K\"orner, D. Haas, T. Baumbach.
+High-Speed X-ray Cineradiography for Analyzing Complex Kinematics in Living Insects.
+\textit{Synchrotron Radiation News} 21 (5), 34-38 (2008)
+
+\end{enumerate}
+
+
+%******************************************************************
+%******************************************************************
+%\chapter {[OPTIONAL] Optical Flow Framework}
+%******************************************************************
+%******************************************************************
+
+%\comment{Provide as part of future work}
+%
+%\section{Developer Manual}
+%
+%
+%\begin{itemize}
+%	\item  Class diagram
+%  \item  Modules
+%  \item  Image and data types
+%\end{itemize}
+%
+%
+%\section{User Manual}
+%
+%\subsection{Features list}
+%
+%- Features list
+%\\
+%-Description of all settings
+%
+%\subsection{Examples}
+%
+%\subsubsection{Example 1: Flow analysis}
+%
+%Liquid flow of particles
+%
+%\subsubsection{Example 2: Temporal changes analysis}
+%
+%Foams
+%
+%\subsubsection{Example 3: 3D - Which?}
+%
+%Xenopus
+     
+
+
+\bibliography{biblio}
+
+\end{document}
