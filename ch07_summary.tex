@@ -1,0 +1,94 @@
+%******************************************************************    
+%******************************************************************
+\chapter {Summary and Outlook}
+%******************************************************************
+%******************************************************************
+
+\section{Conclusions}
+\label{conclusions}
+
+In this work we investigated the application of optical flow methods in the field of X-ray Imaging. We conclude that optical flow methods are well suited for \textit{automated} analysis of time-resolved X-ray data for a wide range of scientific problems. As a core technique we use the \textit{variational} optical flow methods. A variety of existing models - both for the design of data terms and the flow field regularization, the robustness under noise and changing brightness conditions, the subpixel precision, the well-posdeness of a solution and possibility to compute all types of motion, makes variational optical flow a flexible and an effective tool. 
+
+Depending on an application, an imaging technique, a data acquisition protocol and a type of the investigated process, the input X-ray data may be immensely diverse. That is why, in contrast to classical optical flow applications, where a visible light imaging is used to obtain a high-resolution, low-noise, color images, no single optical flow method can be universally and effectively used. Therefore, a dedicated motion estimation procedure should be developed and implemented  for each application class. This procedure should take into account all properties related to the input data, the process of investigation and requirements on the results.   
+
+To get insights about the performance of each optical flow model for a particular imaging condition, we performed  quantitative studies on the synthetic data.  Based on an extensive evaluation of experimental data we learned a number of principles and aspects which are integral for the analysis of X-ray images:
+
+\begin{itemize}
+
+\item The gradient based approach, compared with the image brightness constancy, has an advantage of robustness under spatio-temporal brightness variations. However, it is reasonable to assume that derivatives-based gradient constancy assumption will be more sensitive to noise, than the data assumption on brightness values. Our performance analysis revealed that  gradient constancy assumption in a robust setting provides better results then the grey value constancy  even for large amounts of noise. This makes gradient based data term a superior model for most cases.
+
+\item Our experiments show that the robust data term provides worse performance for low-contrast data, then the quadratic terms. This is in contradiction to popular state-of-the-art optical flow models \cite{Middl}, which employ robust data term as a default setting for most application scenarios. We conclude, that in the case of a low-contrast data a dedicated optical flow model should be employed. Furthermore, the preprocessing step to enhance the image contrast shows to be a useful strategy. However, a special care should be devoted to the noise properties of the input data, especially to such parameter as a contrast-to-noise ratio (CNR).
+
+\item The usage of quadratic data term can be beneficial to capture data outliers, if one is interested to recognize appearing/disappearing information. This can be useful for various applications such as analysis of bubble collapses in foams, crack propagation in materials or structures, and changes in other morphological properties.
+
+\item  Usefulness of data preprocessing. For difficult image quality scenarios - high noise, low-contrast, presence of artifacts - it makes sense to augment the optical flow computation with a dedicated image preprocessing. Our experiments with the synthetic datasets clearly indicate this. Interestingly, in some cases, a simpler optical flow model with a highly optimized preprocessing step may provide better results then an advanced method with the explicit modeling of challenging data. This can be explained by a more efficient decoupling of interrelated problems - denoising, brightness correction and motion estimation. As a result, such decoupling may give more degrees of freedom for the optimization process. 
+
+\end{itemize}
+
+To justify the choice of a processing workflow we provide a systematic data taxonomy on which we base the selection of the appropriate optical flow model. 
+
+Additional advantage of optical flow methods which we evaluated in this work is a possibility to use  confidence measures to ensure the accuracy of results and to simplify optimization of model parameters.  Such feature is crucial for practical applications, especially taking into account the variability of X-ray data.
+
+On top of the optical flow techniques, we implemented an extensive framework for further analysis of optical flow results. Based on the result of optical flow we are able to perform motion analysis, object tracking, image registration and motion-based object recognition. 
+
+The implementation of the developed techniques incorporates advanced numerical schemes and computations on Graphical Processing Units (GPU). Thereby, the processing of a vast amount of X-ray data is feasible. This is especially important for analysis of 3D tomographic datasets.
+
+After we establish methods for motion estimation and data analysis, and implement efficient computation routines we apply the devised techniques to a number of exemplary scientific problems from various research fields. These examples include flow analysis and particle segmentation in semi-solid alloys, analysis of morphogenesis in living frog embryos, coalescence events estimation and stability studies during the foaming process, and tracking of morphological dynamics in living insects. For all presented applications an automated, robust and accurate analysis of time-resolved  data was central to get important insights about the given research topic. Therefore, we conclude that optical flow is a promising tool for automated data analysis, which can be effectively used for a wide range of other scientific problems in the fields of Medical Imaging, Material and Life Sciences, and Quality Engineering.  
+
+\newpage
+
+\section{Further work}
+
+Despite the fact that nowadays the optical flow is the established field, there is still a plenty of space for further development.  Here we describe a number of promising directions and aspects, which could improve the accuracy of optical flow methods and advance their applicability for challenging data, such as X-ray images.
+\\
+\\
+\textit{Advanced optical flow techniques}. Novel optical flow methods are constantly being developed in the field of Computer Vision, as well in the applied fields (e.g. Medical Image Processing). Some of the promising methods include - modeling temporal coherence \cite{Volz11}, motion and segmentation methods \todo{Refs}, optical flow based on superpixels \cite{Amat13}.
+\\
+\\  
+\textit{Modeling of motion blur}. A proper modeling of motion blur within the optical flow framework could significantly improve the results and allow to perform quantitative motion analysis for faster processes and events, thus reducing the limiting factor of the maximum possible frame rate. Some works already propose a number of possibilities using a special optimization strategy \cite{Seitz09}. 
+\\
+\\
+\textit{Joint motion estimation and segmentation}. If images can be segmented into coherently moving regions, many of the presented methods can be used to accurately estimate the flow within such regions. From the other hand, if the flow were accurately known, segmenting it into coherent regions would be feasible. Therefore, a joint motion estimation and image segmentation should be a major improvement for both tasks.
+\\
+\\
+\textit{Motion in multilayers}. The use of parametric models that estimate motion in layers \cite{Jepson93, Wang93, Ju96} is a promising concept to properly apply optical flow on radiographic images, where 3D structures overlap due to the protective geometry.
+\\
+\\   
+\textit{Incorporation of geometrical constraints on motion}. In the case when a sparse optical flow result is sufficient (e.g. for estimation of rigid motion), the use of geometrical constraints on a set of sparse landmarks could improve the robustness of the results. A similar approach was used in this work in Section \ref{app_kinematics_insects}. It was implemented as separate post-processing step. However, such procedure can be explicitly modelled within a variational optical flow framework. 
+\\
+\\
+\textit{Fusion of different contrast modalities}. Multiple image assumptions might be useful in order to incorporate information obtained using different contrast mechanisms, for example an absorption contrast and contrast from phase- and dark- field imaging. Taking into account more physically meaningful information should enhance the credibility of the data term.
+\\
+\\   
+\textit{Learning optical flow methods}. Instead of tuning parameters of the optical flow manually or using a brute-force search, one may use learning methods to train the optical flow on a set of training datasets. A number of such methods already been proposed \cite{Sun08}.
+\\
+\\  
+\textit{Combination of optic flow with ART reconstruction methods}. Incorporate the problem of dense optical flow estimation with algebraic reconstruction techniques \cite{Gordon70} into a single computational framework. 
+\\
+\\   
+\textit{Data correction using motion-based in-painting}. Recover missing information in radiographic images (e.g. corrupted by dust or scratches in the detector optics) using a motion based in-painting \cite{Werlberger11}
+\\
+\\  
+\textit{Database for medical and microscopy imaging and optical flow}. Middlebury database for the evaluation of optical flow techniques has led to rapid improvements and understanding of optical flow methods \cite{Middl}. A similar approach could be of great use for the field of Medical Imaging.     Such work on for the X-ray data is ongoing.
+\\
+\\  
+\textit{More applications of optical flow methods}. As we stated in the concluding section of our work, optical flow methods are general and well-suited for a number of scientific tasks in various research fields. Therefore, more application from the fields outside of the native Computer Vision are foreseen and expected to give useful results. The fields which can benefit from a thorough and systematic use of optical flow methods are Medical Imaging, Material Science and Quality Engineering. 
+
+\todo{More effective vizualization methods. Interactive and advanced vizualization techniques}
+
+\todo{Multigrid methods. \cite{Stuben82, Bornemann96} }
+
+
+%\todo{Motion estimation and Segmentation. From: \cite{Middl}. If the image can be segmented into coherently moving regions,
+%many of the methods above can be used to accurately estimate the flow within the regions. Further, if the flow were accurately known, segmenting it into coherent regions
+%would be feasible. One of the reasons \opticalflow has
+%proven challenging to compute is that the flow and its segmentation
+%must be computed together.
+%Several methods first segment the scene using nonmotion
+%cues and then estimate the flow in these regions
+%(Black and Jepson 1996; Xu et al. 2008; Fuh and Maragos
+%1989). Within each image segment, Black and Jepson
+%(1996) use a parametric model (e.g., affine) (Bergen et al.
+%1992), which simplifies the problem by reducing the number
+%of parameters to be estimated. The flow is then refined
+%as suggested above. Give a reference on motion-segmentation methods. Clustering, long sequence analysis, shape priors and so on.}
