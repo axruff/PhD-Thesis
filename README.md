@@ -31,6 +31,23 @@ The implementation of the developed techniques incorporates advanced numerical s
 
 Finally, we present the application of the optical flow methods to a number of scientific problems from various research fields. These examples include flow analysis and particle segmentation in semi-solid alloys, analysis of morphogenesis in living frog embryos, coalescence events estimation and stability studies during the foaming process, and tracking of morphological dynamics in living insects.
 
+## Preview Figures
+
+![alt text](https://github.com/axruff/PhD-Thesis/raw/master/figures/app_embryo_setup.png "X-ray Experimental Setup")
+Figure: Experimental setup for phase-contrast X-ray microtomography.
+
+
+
+![alt text](https://github.com/axruff/PhD-Thesis/raw/master/figures/app_embryo_velocity.png "Cell motion analysis")
+Figure: Cell motion analysis from 3D time-lapse series of Xenopus laevis embryo during mid-gastrulation.
+
+
+
+![alt text](https://github.com/axruff/PhD-Thesis/raw/master/figures/app_bug_motion_seg.png "Morphological dynamics and Kinematics")
+Figure: Morphological dynamics and kinematics analysis of the screw joint during defensive movement.
+
+
+
 ## Table of Content
 
 
@@ -65,4 +82,3 @@ Finally, we present the application of the optical flow methods to a number of s
    - 7.1 Conclusions
    - 7.2 Further work
 8. List of Publications
-  
