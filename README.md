@@ -1,4 +1,6 @@
-# PhD thesis: "Automated Analysis of Time-resolved X-ray Data using Optical Flow Methods" by Alexey Ershov
+# PhD thesis
+
+# Automated Analysis of Time-resolved X-ray Data using Optical Flow Methods" by Alexey Ershov
 
 [Full text (pdf)](../master/PhD_Thesis_Ershov.pdf)
 
